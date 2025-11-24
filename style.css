@@ -1,0 +1,99 @@
+.nav-links{
+    display: flex; font-style: normal; list-style: none; gap: 20px; font-weight: 300;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: crimson;
+    color: white;
+}
+.hero{
+   height: 90vh;
+   background-image: url(image/image2.jpg);
+   background-size: cover;
+   background-position: center;
+   align-items: center;
+   text-align: center;
+   color: black; 
+}
+.contact-section{
+   height: 90vh;
+   background-image: url(image/image2.jpg);
+   background-size: cover;
+   background-position: center;
+   align-items: center;
+   text-align: center;
+   color: black; 
+   font-size: xx-large;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: crimson;
+    color: white;
+}
+.cards-container{
+    background-color:whitesmoke ;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 300px;
+    background: white;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,2);
+}
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,2);
+}
+.card h3{
+    margin: 15px 0 5px;
+}
+.card p{
+    padding: 0 15px;
+    font-size: 15px;
+    color: #555;
+}
+.aboutus-section{
+     height: 90vh;
+   background-image: url(image/image2.jpg);
+   background-size: cover;
+   background-position: center;
+   align-items: center;
+   text-align: center;
+   color: black; 
+   font-size: xx-large;
+}
+@media (max-width:768px) {
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .service-container{
+        grid-template-columns: 1fr;
+    }
+    .hero h1{
+        font-size: 24px;
+    }
+    .hero p{
+        font-size: 16px;
+    }
+}
