@@ -11,31 +11,67 @@
     <nav class="navbar">
         <div class="logo">RABB WEB SLTNS</div>
         <ul class="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="aboutus.html" class="active">about us</a></li>
-            <li><a href="ourservices.html">our services</a></li>
-            <li><a href="contact.html">contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html" class="active">About Us</a></li>
+            <li><a href="ourservices.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
-    
-    <section class="aboutus-section">
-        <h2>Who Are We?</h2>
-        <p>We are a forward-thinking web solutions company dedicated to delivering exceptional digital experiences to our clients across East Africa and beyond.</p>
-        <p>We believe in simplicity, powerful design, and user-centric solutions that create lasting impact.</p>
-        
-        <h3>Our Mission</h3>
-        <p>Empowering young entrepreneurs and businesses to establish a powerful online presence that drives growth and success in the digital economy.</p>
 
-        <h3>What We Deliver</h3>
-        <ul>
-            <li>Professional Website Development & Redesign</li>
-            <li>User Experience & Interface Design</li>
-            <li>IT Support & Business Technology Solutions</li>
-        </ul>
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="ourservices.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Who Are We?</h2>
+                <p>We are a forward-thinking web solutions company dedicated to delivering exceptional digital experiences to our clients across East Africa and beyond.</p>
+                <p>We believe in simplicity, powerful design, and user-centric solutions that create lasting impact.</p>
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-dark);">Our Mission</h3>
+                <p>Empowering young entrepreneurs and businesses to establish a powerful online presence that drives growth and success in the digital economy.</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-dark);">What We Deliver</h3>
+                <ul class="about-list">
+                    <li>Professional Website Development & Redesign</li>
+                    <li>User Experience & Interface Design</li>
+                    <li>IT Support & Business Technology Solutions</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="image/image2.jpg" alt="About RABB WEB SLTNS">
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 RABB WEB SLTNS - All rights reserved</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

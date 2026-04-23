@@ -11,35 +11,73 @@
     <nav class="navbar">
         <div class="logo">RABB WEB SLTNS</div>
         <ul class="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="aboutus.html">about us</a></li>
-            <li><a href="ourservices.html">our services</a></li>
-            <li><a href="contact.html">contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="ourservices.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
-    
-    <section class="service-details">
-        <div class="service-content">
-            <h1>UI/UX Design</h1>
-            <p class="service-subtitle">Beautiful, Intuitive Interfaces That Engage & Convert</p>
-            <img src="image/uiux.jpg" class="service-img" alt="UI/UX Design">
-            
-            <h2>What We Offer</h2>
-            <ul class="service-list">
-                <li>✓ User Research & Discovery</li>
-                <li>✓ Wireframing & Information Architecture</li>
-                <li>✓ Interactive Prototyping</li>
-                <li>✓ Mobile App UI Design</li>
-                <li>✓ Website UI Design & Branding</li>
-                <li>✓ User Testing & Optimization</li>
-            </ul>
-            
-            <p class="cta-text">Let's design something amazing together! <a href="contact.html" class="btn">Get Started</a></p>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </section>
+    </nav>
+
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="ourservices.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="detail-hero">
+        <h1>UI/UX Design</h1>
+    </div>
+
+    <div class="detail-content">
+        <h2>Beautiful, Intuitive Interfaces That Engage & Convert</h2>
+        <p>Great design goes beyond aesthetics - it's about creating experiences that solve problems and delight users. We design interfaces that are both beautiful and functional.</p>
+        
+        <img src="image/uiux.jpg" alt="UI/UX Design" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
+        
+        <h2>What We Offer</h2>
+        <ul class="detail-list">
+            <li>User Research & Discovery</li>
+            <li>Wireframing & Information Architecture</li>
+            <li>Interactive Prototyping</li>
+            <li>Mobile App UI Design</li>
+            <li>Website UI Design & Branding</li>
+            <li>User Testing & Optimization</li>
+        </ul>
+        
+        <h2>Our Design Philosophy</h2>
+        <p>We believe that exceptional design is a blend of art and science. Through research, testing, and iteration, we create interfaces that users love to use.</p>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="contact.html" class="cta-button">Let's Design Something Amazing</a>
+        </div>
+    </div>
     
     <footer>
         <p>&copy; 2025 RABB WEB SLTNS - All rights reserved</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

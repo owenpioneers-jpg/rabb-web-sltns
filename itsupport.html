@@ -11,36 +11,74 @@
     <nav class="navbar">
         <div class="logo">RABB WEB SLTNS</div>
         <ul class="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="aboutus.html">about us</a></li>
-            <li><a href="ourservices.html">our services</a></li>
-            <li><a href="contact.html">contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="ourservices.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
-    
-    <section class="service-details">
-        <div class="service-content">
-            <h1>IT Support & Solutions</h1>
-            <p class="service-subtitle">Professional Technical Support Keeping Your Systems Secure & Efficient</p>
-            <img src="image/ITsupport.jpg" class="service-img" alt="IT Support">
-            
-            <h2>What We Offer</h2>
-            <ul class="service-list">
-                <li>✓ 24/7 Technical Support</li>
-                <li>✓ Software Installation & Configuration</li>
-                <li>✓ Hardware Troubleshooting & Repair</li>
-                <li>✓ Network Setup & Optimization</li>
-                <li>✓ Computer Maintenance & Updates</li>
-                <li>✓ Cybersecurity Solutions</li>
-                <li>✓ Data Backup & Recovery</li>
-            </ul>
-            
-            <p class="cta-text">Need IT support? We're here to help! <a href="contact.html" class="btn">Contact Our Team</a></p>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </section>
+    </nav>
+
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="ourservices.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="detail-hero">
+        <h1>IT Support & Solutions</h1>
+    </div>
+
+    <div class="detail-content">
+        <h2>Professional Technical Support Keeping Your Systems Secure & Efficient</h2>
+        <p>In today's digital world, reliable IT support isn't optional - it's essential. We provide comprehensive technical support and solutions that minimize downtime and maximize productivity.</p>
+        
+        <img src="image/ITsupport.jpg" alt="IT Support" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
+        
+        <h2>What We Offer</h2>
+        <ul class="detail-list">
+            <li>24/7 Technical Support</li>
+            <li>Software Installation & Configuration</li>
+            <li>Hardware Troubleshooting & Repair</li>
+            <li>Network Setup & Optimization</li>
+            <li>Computer Maintenance & Updates</li>
+            <li>Cybersecurity Solutions</li>
+            <li>Data Backup & Recovery</li>
+        </ul>
+        
+        <h2>Why Our IT Support?</h2>
+        <p>We combine proactive monitoring, rapid response times, and deep technical expertise to keep your systems running smoothly. Let us handle your IT so you can focus on your business.</p>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="contact.html" class="cta-button">Get IT Support Today</a>
+        </div>
+    </div>
     
     <footer>
         <p>&copy; 2025 RABB WEB SLTNS - All rights reserved</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

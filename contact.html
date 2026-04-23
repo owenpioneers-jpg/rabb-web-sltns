@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact RABB WEB SLTNS - Get in touch with us for your web development and IT support needs">
+    <meta name="description" content="Contact RABB WEB SLTNS - Get in touch for your web development and IT support needs">
     <title>Contact Us - RABB WEB SLTNS</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,27 +11,68 @@
     <nav class="navbar">
         <div class="logo">RABB WEB SLTNS</div>
         <ul class="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="aboutus.html">about us</a></li>
-            <li><a href="ourservices.html">our services</a></li>
-            <li><a href="contact.html" class="active">contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="ourservices.html">Services</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="ourservices.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
     
-    <section class="contact-section">
+    <section class="contact">
         <h2>Get In Touch</h2>
         <p>One conversation away from digital transformation</p>
         <div class="contact-info">
-            <h3>Contact Details</h3>
-            <p><strong>📧 Email:</strong> Rab4218@gmail.com</p>
-            <p><strong>📱 Phone:</strong> +254742184483</p>
-            <p><strong>📍 Location:</strong> Nairobi, Kenya</p>
-            <p><strong>🌐 Social Media:</strong> @Rabdesign17</p>
+            <div class="contact-box">
+                <h3>📧 Email</h3>
+                <p>Rab4218@gmail.com</p>
+            </div>
+            <div class="contact-box">
+                <h3>📱 Phone</h3>
+                <p>+254742184483</p>
+            </div>
+            <div class="contact-box">
+                <h3>📍 Location</h3>
+                <p>Nairobi, Kenya</p>
+            </div>
+            <div class="contact-box">
+                <h3>🌐 Social Media</h3>
+                <p>@Rabdesign17</p>
+            </div>
         </div>
     </section>
     
     <footer>
         <p>&copy; 2025 RABB WEB SLTNS - All rights reserved</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
